@@ -1,0 +1,29 @@
+.SideBar
+  .LeftHeader
+    .LeftHeader__UserList
+      .LeftHeader__UserList__UserName
+        花子
+      %ul.LeftHeader__UserList__IconList
+        %li.LeftHeader__UserList__Icon
+          = link_to "#" do
+            = icon('fas', 'edit')
+        %li.LeftHeader__UserList__Icon
+          = link_to "#" do
+            = icon('fab', 'whmcs')
+  
+  .GroupList
+    .Group
+      = link_to "#", class: "Group__Link" do
+        .Group__Link__Name
+          新しいグループ１
+        .Group__Link__Message
+          おはよう
+    .Group
+      = link_to "#", class: "Group__Link" do
+        .Group__Link__Name
+          新しいグループ２
+        .Group__Link__Message
+          おはよう
+  
+
+      

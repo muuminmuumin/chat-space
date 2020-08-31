@@ -1,0 +1,37 @@
+.ChatMain
+  .Header
+    .Header__Left
+      .Header__Left__GroupName
+        新しいグループ１
+      .Header__Left__MemberNameList
+        Member : 花子
+    .Header__Right
+      = link_to "#" , class: "Header__Right__Edit" do
+        Edit
+  .MessageList
+    .MessageFrame
+      .MessageFrame__NameDate
+        .MessageFrame__NameDate__Name
+          花子
+        .MessageFrame__NameDate__Date
+          2020/8/8 10時10分
+      .MessageFrame__Text
+        おはよう
+    .MessageFrame
+      .MessageFrame__NameDate
+        .MessageFrame__NameDate__Name
+          花子
+        .MessageFrame__NameDate__Date
+          2020/8/8 10時15分
+      .MessageFrame__Text
+        おはよう
+  .Footer
+    %form.Comment
+      .CommentMain
+        %input{type: "text", placeholder: "type a message", class: "CommentMain__InputComment" }
+        %label{class: "CommentMain__Image"}
+          = icon('far', 'image')
+          %input{type: "file", class: "CommentMain__Image__DateFile"}
+      %input{type: "submit", value: "Send", class: "SendBtn"}
+        
+
