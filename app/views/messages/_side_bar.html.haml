@@ -12,18 +12,11 @@
             = icon('fab', 'whmcs')
   
   .GroupList
-    .Group
-      = link_to "#", class: "Group__Link" do
-        .Group__Link__Name
-          新しいグループ１
-        .Group__Link__Message
-          おはよう
-    .Group
-      = link_to "#", class: "Group__Link" do
-        .Group__Link__Name
-          新しいグループ２
-        .Group__Link__Message
-          おはよう
-  
-
-      
+    - current_user.groups.each do |group|
+      .Group
+        = link_to "#", class:"Group__Link" do
+          .Group__Link__Name
+            = group.name
+          .Group__Link__Message
+            おはよう
+    
