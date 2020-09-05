@@ -9,22 +9,7 @@
       = link_to "#" , class: "Header__Right__Edit" do
         Edit
   .MessageList
-    .MessageFrame
-      .MessageFrame__NameDate
-        .MessageFrame__NameDate__Name
-          花子
-        .MessageFrame__NameDate__Date
-          2020/8/8 10時10分
-      .MessageFrame__Text
-        おはよう
-    .MessageFrame
-      .MessageFrame__NameDate
-        .MessageFrame__NameDate__Name
-          花子
-        .MessageFrame__NameDate__Date
-          2020/8/8 10時15分
-      .MessageFrame__Text
-        おはよう
+    = render @messages
   .Footer
     = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .CommentMain
