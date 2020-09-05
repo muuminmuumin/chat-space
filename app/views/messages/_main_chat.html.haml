@@ -26,12 +26,12 @@
       .MessageFrame__Text
         おはよう
   .Footer
-    %form.Comment
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .CommentMain
-        %input{type: "text", placeholder: "type a message", class: "CommentMain__InputComment" }
-        %label{class: "CommentMain__Image"}
+        = f.text_field :body, placeholder: 'type a message', class: 'CommentMain__InputComment' 
+        = f.label :image, class: 'CommentMain__Image' do
           = icon('far', 'image')
-          %input{type: "file", class: "CommentMain__Image__DateFile"}
-      %input{type: "submit", value: "Send", class: "SendBtn"}
+          = f.file_field :image, class: 'CommentMain__Image__DateFile'
+      = f.submit 'Send', class: 'SendBtn'
         
 
