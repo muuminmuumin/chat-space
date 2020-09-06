@@ -2,36 +2,23 @@
   .Header
     .Header__Left
       .Header__Left__GroupName
-        新しいグループ１
+        = @group.name
       .Header__Left__MemberNameList
-        Member : 花子
+        Member : 
+        - @group.users.each do |user|
+          = user.name
     .Header__Right
-      = link_to "#" , class: "Header__Right__Edit" do
+      = link_to edit_group_path(@group), class: "Header__Right__Edit" do
         Edit
   .MessageList
-    .MessageFrame
-      .MessageFrame__NameDate
-        .MessageFrame__NameDate__Name
-          花子
-        .MessageFrame__NameDate__Date
-          2020/8/8 10時10分
-      .MessageFrame__Text
-        おはよう
-    .MessageFrame
-      .MessageFrame__NameDate
-        .MessageFrame__NameDate__Name
-          花子
-        .MessageFrame__NameDate__Date
-          2020/8/8 10時15分
-      .MessageFrame__Text
-        おはよう
+    = render @messages
   .Footer
-    %form.Comment
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .CommentMain
-        %input{type: "text", placeholder: "type a message", class: "CommentMain__InputComment" }
-        %label{class: "CommentMain__Image"}
+        = f.text_field :body, placeholder: 'type a message', class: 'CommentMain__InputComment' 
+        = f.label :image, class: 'CommentMain__Image' do
           = icon('far', 'image')
-          %input{type: "file", class: "CommentMain__Image__DateFile"}
-      %input{type: "submit", value: "Send", class: "SendBtn"}
+          = f.file_field :image, class: 'CommentMain__Image__DateFile'
+      = f.submit 'Send', class: 'SendBtn'
         
 

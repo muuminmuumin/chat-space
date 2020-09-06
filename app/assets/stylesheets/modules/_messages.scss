@@ -52,6 +52,8 @@
     height: calc(100vh - 180px);
     padding-left: 40px;
     padding-top: 35px;
+    overflow: scroll;
+    box-sizing: border-box;
     .MessageFrame{
         margin-bottom: 46px;
       &__NameDate{
@@ -165,6 +167,7 @@
     height: calc(100vh - 100px);
     padding: 0 20px;
     color: #ffffff;
+    overflow: scroll;
     .Group{
       padding: 20px 0 40px ;
       &__Link{
