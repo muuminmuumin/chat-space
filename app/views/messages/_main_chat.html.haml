@@ -2,11 +2,13 @@
   .Header
     .Header__Left
       .Header__Left__GroupName
-        新しいグループ１
+        = @group.name
       .Header__Left__MemberNameList
-        Member : 花子
+        Member : 
+        - @group.users.each do |user|
+          = user.name
     .Header__Right
-      = link_to "#" , class: "Header__Right__Edit" do
+      = link_to edit_group_path(@group), class: "Header__Right__Edit" do
         Edit
   .MessageList
     = render @messages
