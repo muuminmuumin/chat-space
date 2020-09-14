@@ -59,6 +59,7 @@ $(function(){
       $(".MessageList").append(html);
       $("form")[0].reset();
       $(".MessageList").animate({ scrollTop: $(".MessageList")[0].scrollHeight});
+      $(".SendBtn").prop("disabled", false);
       
     })
     
