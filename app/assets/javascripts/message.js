@@ -19,23 +19,23 @@ $(function(){
             <img class='MessageFrame__Text__image" src="${message.image}">
           </div>
         </div>`
-        return html;
+      return html;
     } else {
       let html = 
       `<div class="MessageFrame">
-          <div class="MessageFrame__NameDate">
-            <div class="MessageFrame__NameDate__Name">
-              ${message.user_name}
-            </div>
-            <div class="MessageFrame__NameDate__Date">
-              ${message.created_at}
-            </div>
+        <div class="MessageFrame__NameDate">
+          <div class="MessageFrame__NameDate__Name">
+            ${message.user_name}
           </div>
-          <div class="MessageFrame__Text">
-            <p class="MessageFrame__Text__Body">
-              ${message.body}
-            </p>
+          <div class="MessageFrame__NameDate__Date">
+            ${message.created_at}
           </div>
+        </div>
+        <div class="MessageFrame__Text">
+          <p class="MessageFrame__Text__Body">
+            ${message.body}
+          </p>
+        </div>
       </div>`
       return html
     };
