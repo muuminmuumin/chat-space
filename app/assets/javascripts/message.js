@@ -1,8 +1,8 @@
 $(function(){
   function buildHTML(message){
-    // 「もしメッセージに画像が含まれていたら」という条件式
+    
     if (message.image) {
-      let html = //メッセージに画像が含まれる場合のHTMLを作る
+      let html = 
         `<div class="MessageFrame">
           <div class="MessageFrame__NameDate">
             <div class="MessageFrame__NameDate__Name">
@@ -21,7 +21,7 @@ $(function(){
         </div>`
         return html;
     } else {
-      let html = //メッセージに画像が含まれない場合のHTMLを作る
+      let html = 
       `<div class="MessageFrame">
           <div class="MessageFrame__NameDate">
             <div class="MessageFrame__NameDate__Name">
@@ -54,9 +54,11 @@ $(function(){
       processData: false,
       contentType: false
     })
-    .done(function(message){
-      let html = buildHTML(message);
-      console.log(message)
+    .done(function(data){
+      let html = buildHTML(data)
+      $(".MessageList").append(html);
+      $("form")[0].reset();
+      
     })
     
     
