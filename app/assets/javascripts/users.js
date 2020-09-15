@@ -47,5 +47,11 @@ $(function() {
     .fail(function(){
       alert("通信エラーです。ユーザーが表示できません");
     });
+  });
+  $("#UserSearchResult").on("click", ".ChatMember__add", function(){
+    console.log("イベント発火")
   })
+
+
+
 });
