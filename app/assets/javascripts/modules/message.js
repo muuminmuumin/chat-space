@@ -19,7 +19,7 @@ $(function(){
             <p class="MessageFrame__Text__Body">
               ${message.body}
             </p>
-            <img class='MessageFrame__Text__image" src="${message.image}">
+            <img class='MessageFrame__Text__image' src="${message.image}">
           </div>
         </div>`
       return html;
